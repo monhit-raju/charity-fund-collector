@@ -1,0 +1,2 @@
+Step 0: Robot A -> (0, 0), Robot B -> (9, 0)
+Step 1: Robot A -> (0, 1), Robot B -> (8, 0)
