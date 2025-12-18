@@ -6,10 +6,12 @@ import Contact from "./pages/Contact";
 import Donate from "./pages/Donate";
 import SignUp from "./pages/SignUp";
 import Admin from "./pages/Admin";
+import ApiTest from "./components/ApiTest";
 
 export default function App() {
   return (
     <BrowserRouter>
+      <ApiTest />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/about" element={<About />} />
