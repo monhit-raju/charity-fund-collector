@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
+import API_BASE_URL from '../config/api';
 
 const SignUp = () => {
 
@@ -48,7 +49,7 @@ const SignUp = () => {
         if (validateForm()) {
             var options = {
                 method: 'POST',
-                url: 'http://localhost:5000/api/v1/registration',
+                url: `${API_BASE_URL}/api/v1/registration`,
                 data: { email: form.email, password: form.confirmPassword },
             };
 

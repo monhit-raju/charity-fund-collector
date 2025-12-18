@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { useNavigate } from "react-router-dom";
+import API_BASE_URL from '../config/api';
 
 function Admin() {
     const [selectedMail, setSelectedMail] = useState(null);
@@ -50,7 +51,7 @@ function Admin() {
             showLoaderOnConfirm: true,
             preConfirm: async () => {
                 try {
-                    const url = `http://localhost:5000/api/v1/registration/auth`;
+                    const url = `${API_BASE_URL}/api/v1/registration/auth`;
                     const mail = document.getElementById("floatingInput").value;
                     const pass = document.getElementById("floatingPassword").value;
                     // console.log(email, pass);
@@ -78,7 +79,7 @@ function Admin() {
     const fetchDonations = async (auth1) => {
         var options = {
             method: 'GET',
-            url: 'http://localhost:5000/api/v1/search/allDonations',
+            url: `${API_BASE_URL}/api/v1/search/allDonations`,
             headers: {
                 Authorization: `Basic ${auth1}`,
                 'Content-Type': 'application/json'
@@ -96,7 +97,7 @@ function Admin() {
     const fetchContacts = async (auth1) => {
         var options = {
             method: 'GET',
-            url: 'http://localhost:5000/api/v1/contact',
+            url: `${API_BASE_URL}/api/v1/contact`,
             headers: {
                 Authorization: `Basic ${auth1}`,
                 'Content-Type': 'application/json'
@@ -113,7 +114,7 @@ function Admin() {
     const fetchUserInfo = async (mail) => {
         var options = {
             method: 'GET',
-            url: 'http://localhost:5000/api/v1/search/donations?email=' + mail,
+            url: `${API_BASE_URL}/api/v1/search/donations?email=${mail}`,
             headers: {
                 Authorization: `Basic ${auth}`,
                 'Content-Type': 'application/json'
@@ -160,7 +161,7 @@ function Admin() {
         }
         var options = {
             method: 'GET',
-            url: 'http://localhost:5000/api/v1/search/' + query,
+            url: `${API_BASE_URL}/api/v1/search/${query}`,
             headers: {
                 Authorization: `Basic ${auth}`,
                 'Content-Type': 'application/json'

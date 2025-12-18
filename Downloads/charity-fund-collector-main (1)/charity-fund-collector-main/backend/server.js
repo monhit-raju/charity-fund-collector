@@ -14,7 +14,7 @@ const app = express();
 app.use(cors({
   origin: [
     'http://localhost:3000',
-    'https://charity-frontend-one.vercel.app', // Replace with your actual Vercel URL
+    'https://charity-frontend-one.vercel.app',
     /\.vercel\.app$/
   ],
   credentials: true
